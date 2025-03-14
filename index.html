@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MyStore</title>
+    <!--add the css file-->
+    <link rel="stylesheet" href="styles.css" />
+    <!--font awesome-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+    <!--tailwind css-->
+    <link rel="stylesheet" href="https://cdn.tailwindcss.com" />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-gray-100 font-sans">
+    <!-- Header -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+      <div
+        class="container mx-2 px-6 py-4 flex justify-between items-center w-full max-w-none content-center content-center"
+      >
+        <!-- Logo -->
+        <div
+          class="text-2xl font-bold text-gray-800 flex items-center space-x-2"
+        >
+          <img src="assets/logo.png" alt="logo" id="logo" />
+          <span class="hidden lg:block">MyStore</span>
+        </div>
+
+        <!-- Search, Account, and Cart -->
+        <div
+          class="flex-grow mx-4 flex flex-row items-center justify-center space-x-4"
+        >
+          <div class="flex justify-between items-center content-center">
+            <form
+              action="#"
+              method="GET"
+              class="flex items-center justify-center"
+            >
+              <input
+                type="text"
+                placeholder="Search products..."
+                class="w-full max-w-xs px-3 py-2 border border-gray-300 rounded-l-full focus:outline-none focus:ring-2 focus:ring-blue-500"
+              />
+              <button
+                type="submit"
+                class="bg-blue-600 text-white px-4 py-2 rounded-r-full hover:bg-blue-700 transition duration-300"
+              >
+                <svg
+                  class="w-5 h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                  ></path>
+                </svg>
+              </button>
+            </form>
+          </div>
+          <div class="flex items-center space-x-4">
+            <a
+              href="#"
+              class="text-gray-600 hover:text-gray-900 font-bold flex items-center"
+            >
+              <i class="fa-solid fa-user md:hidden"></i>
+              <span class="hidden md:inline">Account</span>
+            </a>
+            <a
+              href="#"
+              class="text-gray-600 hover:text-gray-900 font-bold flex items-center"
+            >
+              <i class="fa-solid fa-cart-shopping"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- 
+            Two navigation menus:
+            1. Desktop Menu (md:flex): Home, Products, About, Contact.
+            2. Mobile Menu Button (md:hidden): Toggles mobile menu visibility.
+            3. Mobile Menu (hidden md:hidden): Same links as desktop menu.
+        -->
+
+        <!-- Navigation Menu -->
+        <nav class="hidden md:flex space-x-6">
+          <a href="#" class="text-gray-600 hover:text-gray-900 font-bold"
+            >Home</a
+          >
+          <a
+            href="#products"
+            class="text-gray-700 hover:text-gray-900 font-bold"
+            >Products</a
+          >
+        </nav>
+
+        <!-- Mobile Menu Button -->
+        <button
+          id="mobile-menu-button"
+          class="md:hidden text-gray-700 focus:outline-none"
+        >
+          <svg
+            class="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16m-7 6h7"
+            ></path>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Mobile Navigation Menu -->
+      <nav id="mobile-menu" class="hidden md:hidden">
+        <a
+          href="#"
+          class="block text-gray-700 hover:text-gray-900 py-2 font-bold"
+          >Home</a
+        >
+        <a
+          href="#products"
+          class="block text-gray-700 hover:text-gray-900 py-2 font-bold"
+          >Products</a
+        >
+      </nav>
+    </header>
+    <!-- 
+Toggles the mobile menu visibility when the mobile menu button is clicked.
+-->
+    <script>
+      document
+        .getElementById("mobile-menu-button")
+        .addEventListener("click", function () {
+          var menu = document.getElementById("mobile-menu");
+          if (menu.classList.contains("hidden")) {
+            menu.classList.remove("hidden");
+          } else {
+            menu.classList.add("hidden");
+          }
+        });
+    </script>
+
+    <!-- Hero Section -->
+    <section
+      class="text-white py-20 bg-cover bg-center lg:bg-[url('assets/heroshop.png')] bg-[url('assets/heroshopmobile.png')]"
+    >
+      <div class="container mx-auto px-6 text-center bg-opacity-75 py-16">
+        <h1 class="text-4xl font-bold mb-4">Welcome to MyStore</h1>
+        <p class="text-lg mb-8">
+          Discover the best products at amazing prices.
+        </p>
+        <a
+          href="#products"
+          class="bg-white text-blue-600 px-6 py-3 rounded-full font-semibold hover:bg-blue-50 transition duration-300"
+          >Shop Now</a
+        >
+      </div>
+    </section>
+
+    <!-- 
+Product Section: Displays a grid of product cards with images, titles, descriptions, and "Shop Now" buttons.
+- Each product card has a hover effect that scales the image and reveals the description.
+-->
+    <!-- Product Section -->
+    <section id="products" class="container mx-auto px-6 py-12">
+      <h2 class="text-3xl font-bold text-center mb-8">Our Products</h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- Product Card 1 -->
+        <div class="flex flex-col items-center">
+          <div class="relative rounded-lg shadow-lg overflow-hidden group">
+            <img
+              src="https://static.zara.net/assets/public/59e1/94cd/0bb44ac9bc1c/ce1a6ddf68b2/02284576400-a4/02284576400-a4.jpg?ts=1741706964297&w=829"
+              alt="Product 1"
+              class="w-full aspect-[2/3] object-contain bg-gray-100 transition-transform duration-300 group-hover:scale-105"
+            />
+
+            <!-- Text Container -->
+            <div
+              class="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-black bg-opacity-50 text-white px-6 py-3 rounded-lg shadow-md inline-flex items-center justify-center min-w-[300px] min-h-[50px] transition-all duration-300 ease-in-out group-hover:min-h-[120px] text-center"
+            >
+              <h3
+                class="text-lg font-semibold transition-opacity duration-300 ease-in-out group-hover:opacity-0 whitespace-nowrap"
+              >
+                Z1975 MIDI DENIM DRESS
+              </h3>
+              <span
+                class="absolute opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100 px-4 w-full break-words"
+              >
+                A stylish midi denim dress, perfect for casual and formal looks.
+              </span>
+            </div>
+          </div>
+
+          <a
+            href="#"
+            class="mt-4 bg-blue-600 text-white px-6 py-3 rounded-full font-semibold shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 transition duration-300"
+          >
+            Shop Now
+          </a>
+        </div>
+
+        <!-- Product Card 2 -->
+        <div class="flex flex-col items-center">
+          <div class="relative rounded-lg shadow-lg overflow-hidden group">
+            <img
+              src="https://static.zara.net/assets/public/4b6f/5508/71da4b639ef9/8f96ea6167c2/01063305420-a1/01063305420-a1.jpg?ts=1741626207877&w=1126"
+              alt="Product 2"
+              class="w-full aspect-[2/3] object-contain bg-gray-100 transition-transform duration-300 group-hover:scale-105"
+            />
+
+            <div
+              class="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-black bg-opacity-50 text-white px-6 py-3 rounded-lg shadow-md inline-flex items-center justify-center min-w-[300px] min-h-[50px] transition-all duration-300 ease-in-out group-hover:min-h-[120px] text-center"
+            >
+              <h3
+                class="text-lg font-semibold transition-opacity duration-300 ease-in-out group-hover:opacity-0 whitespace-nowrap"
+              >
+                COTTON - LINEN SHIRT
+              </h3>
+              <span
+                class="absolute opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100 px-4 w-full break-words"
+              >
+                A breathable cotton-linen blend shirt, ideal for warm weather.
+              </span>
+            </div>
+          </div>
+          <a
+            href="#"
+            class="mt-4 bg-blue-600 text-white px-6 py-3 rounded-full font-semibold shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 transition duration-300"
+          >
+            Shop Now
+          </a>
+        </div>
+
+        <!-- Product Card 3 -->
+        <div class="flex flex-col items-center">
+          <div class="relative rounded-lg shadow-lg overflow-hidden group">
+            <img
+              src="https://static.zara.net/assets/public/f512/5939/ea534f7da279/ddec792fd675/02785039644-a1/02785039644-a1.jpg?ts=1741795923399&w=829"
+              alt="Product 3"
+              class="w-full aspect-[2/3] object-contain bg-gray-100 transition-transform duration-300 group-hover:scale-105"
+            />
+
+            <div
+              class="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-black bg-opacity-50 text-white px-6 py-3 rounded-lg shadow-md inline-flex items-center justify-center min-w-[300px] min-h-[50px] transition-all duration-300 ease-in-out group-hover:min-h-[120px] text-center"
+            >
+              <h3
+                class="text-lg font-semibold transition-opacity duration-300 ease-in-out group-hover:opacity-0 whitespace-nowrap"
+              >
+                SHORT PRINT DRESS
+              </h3>
+              <span
+                class="absolute opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100 px-4 w-full break-words"
+              >
+                A vibrant short dress with a beautiful floral print, perfect for
+                summer outings.
+              </span>
+            </div>
+          </div>
+          <a
+            href="#"
+            class="mt-4 bg-blue-600 text-white px-6 py-3 rounded-full font-semibold shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 transition duration-300"
+          >
+            Shop Now
+          </a>
+        </div>
+
+        <!-- Product Card 4 -->
+        <div class="flex flex-col items-center">
+          <div class="relative rounded-lg shadow-lg overflow-hidden group">
+            <img
+              src="https://static.zara.net/assets/public/948b/a5bb/d4be4e77b2ab/a138f28f4bcc/04260904083-p/04260904083-p.jpg?ts=1741622327282&w=1024"
+              alt="Product 4"
+              class="w-full aspect-[2/3] object-contain bg-gray-100 transition-transform duration-300 group-hover:scale-105"
+            />
+
+            <div
+              class="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-black bg-opacity-50 text-white px-6 py-3 rounded-lg shadow-md inline-flex items-center justify-center min-w-[300px] min-h-[50px] transition-all duration-300 ease-in-out group-hover:min-h-[120px] text-center"
+            >
+              <h3
+                class="text-lg font-semibold transition-opacity duration-300 ease-in-out group-hover:opacity-0 whitespace-nowrap"
+              >
+                CHECK SUIT
+              </h3>
+              <span
+                class="absolute opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100 px-4 w-full break-words"
+              >
+                A modern check suit for a stylish and professional look.
+              </span>
+            </div>
+          </div>
+          <a
+            href="#"
+            class="mt-4 bg-blue-600 text-white px-6 py-3 rounded-full font-semibold shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 transition duration-300"
+          >
+            Shop Now
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-400 text-white py-8">
+      <div class="container mx-auto px-6 text-center">
+        <p>&copy; 2025 MyStore. All rights reserved.</p>
+        <div class="mt-4">
+          <a href="#" class="text-white-400 hover:text-dark mx-2"
+            >Privacy Policy</a
+          >
+          <a href="#" class="text-white-400 hover:text-dark mx-2"
+            >Terms of Service</a
+          >
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
