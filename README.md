@@ -3,6 +3,8 @@
 The project is a simple e-commerce website that displays products and allows users to shop for them.
 It includes a header with a logo, search bar, account, and cart links, as well as navigation menus for desktop and mobile devices.
 
+Test it live :) ==> https://ryadbahi.github.io/Project-4-responsive-landig-page/
+
 DESKTOP :
 
 ![Screenshot 2025-03-14 at 22-35-53 MyStore](https://github.com/user-attachments/assets/1f9ceb23-17de-4d48-a0b4-765a2aa11a12)
