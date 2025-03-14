@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -17,13 +17,13 @@
   </head>
   <body class="bg-gray-100 font-sans">
     <!-- Header -->
-    <header class="bg-white shadow-md sticky top-0 z-50">
+    <header class="sticky top-0 z-50 bg-white shadow-md">
       <div
-        class="container mx-2 px-6 py-4 flex justify-between items-center w-full max-w-none content-center content-center"
+        class="container mx-2 flex w-full max-w-none content-center items-center justify-between px-6 py-4"
       >
         <!-- Logo -->
         <div
-          class="text-2xl font-bold text-gray-800 flex items-center space-x-2"
+          class="flex items-center space-x-2 text-2xl font-bold text-gray-800"
         >
           <img src="assets/logo.png" alt="logo" id="logo" />
           <span class="hidden lg:block">MyStore</span>
@@ -31,9 +31,9 @@
 
         <!-- Search, Account, and Cart -->
         <div
-          class="flex-grow mx-4 flex flex-row items-center justify-center space-x-4"
+          class="mx-4 flex flex-grow flex-row items-center justify-center space-x-4"
         >
-          <div class="flex justify-between items-center content-center">
+          <div class="flex content-center items-center justify-between">
             <form
               action="#"
               method="GET"
@@ -42,14 +42,14 @@
               <input
                 type="text"
                 placeholder="Search products..."
-                class="w-full max-w-xs px-3 py-2 border border-gray-300 rounded-l-full focus:outline-none focus:ring-2 focus:ring-blue-500"
+                class="w-full max-w-xs rounded-l-full border border-gray-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
               />
               <button
                 type="submit"
-                class="bg-blue-600 text-white px-4 py-2 rounded-r-full hover:bg-blue-700 transition duration-300"
+                class="rounded-r-full bg-blue-600 px-4 py-2 text-white transition duration-300 hover:bg-blue-700"
               >
                 <svg
-                  class="w-5 h-5"
+                  class="h-5 w-5"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 0 24 24"
@@ -67,14 +67,14 @@
           <div class="flex items-center space-x-4">
             <a
               href="#"
-              class="text-gray-600 hover:text-gray-900 font-bold flex items-center"
+              class="flex items-center font-bold text-gray-600 hover:text-gray-900"
             >
               <i class="fa-solid fa-user md:hidden"></i>
               <span class="hidden md:inline">Account</span>
             </a>
             <a
               href="#"
-              class="text-gray-600 hover:text-gray-900 font-bold flex items-center"
+              class="flex items-center font-bold text-gray-600 hover:text-gray-900"
             >
               <i class="fa-solid fa-cart-shopping"></i>
             </a>
@@ -89,13 +89,13 @@
         -->
 
         <!-- Navigation Menu -->
-        <nav class="hidden md:flex space-x-6">
-          <a href="#" class="text-gray-600 hover:text-gray-900 font-bold"
+        <nav class="hidden space-x-6 md:flex">
+          <a href="#" class="font-bold text-gray-600 hover:text-gray-900"
             >Home</a
           >
           <a
             href="#products"
-            class="text-gray-700 hover:text-gray-900 font-bold"
+            class="font-bold text-gray-700 hover:text-gray-900"
             >Products</a
           >
         </nav>
@@ -103,10 +103,10 @@
         <!-- Mobile Menu Button -->
         <button
           id="mobile-menu-button"
-          class="md:hidden text-gray-700 focus:outline-none"
+          class="text-gray-700 focus:outline-none md:hidden"
         >
           <svg
-            class="w-6 h-6"
+            class="h-6 w-6"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
@@ -125,12 +125,12 @@
       <nav id="mobile-menu" class="hidden md:hidden">
         <a
           href="#"
-          class="block text-gray-700 hover:text-gray-900 py-2 font-bold"
+          class="block py-2 font-bold text-gray-700 hover:text-gray-900"
           >Home</a
         >
         <a
           href="#products"
-          class="block text-gray-700 hover:text-gray-900 py-2 font-bold"
+          class="block py-2 font-bold text-gray-700 hover:text-gray-900"
           >Products</a
         >
       </nav>
@@ -153,16 +153,16 @@ Toggles the mobile menu visibility when the mobile menu button is clicked.
 
     <!-- Hero Section -->
     <section
-      class="text-white py-20 bg-cover bg-center lg:bg-[url('assets/heroshop.png')] bg-[url('assets/heroshopmobile.png')]"
+      class="bg-[url('assets/heroshopmobile.png')] bg-cover bg-center py-20 text-white lg:bg-[url('assets/heroshop.png')]"
     >
-      <div class="container mx-auto px-6 text-center bg-opacity-75 py-16">
-        <h1 class="text-4xl font-bold mb-4">Welcome to MyStore</h1>
-        <p class="text-lg mb-8">
+      <div class="container mx-auto bg-opacity-75 px-6 py-16 text-center">
+        <h1 class="mb-4 text-4xl font-bold">Welcome to MyStore</h1>
+        <p class="mb-8 text-lg">
           Discover the best products at amazing prices.
         </p>
         <a
           href="#products"
-          class="bg-white text-blue-600 px-6 py-3 rounded-full font-semibold hover:bg-blue-50 transition duration-300"
+          class="rounded-full bg-white px-6 py-3 font-semibold text-blue-600 transition duration-300 hover:bg-blue-50"
           >Shop Now</a
         >
       </div>
@@ -174,29 +174,29 @@ Product Section: Displays a grid of product cards with images, titles, descripti
 -->
     <!-- Product Section -->
     <section id="products" class="container mx-auto px-6 py-12">
-      <h2 class="text-3xl font-bold text-center mb-8">Our Products</h2>
+      <h2 class="mb-8 text-center text-3xl font-bold">Our Products</h2>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
         <!-- Product Card 1 -->
         <div class="flex flex-col items-center">
-          <div class="relative rounded-lg shadow-lg overflow-hidden group">
+          <div class="group relative overflow-hidden rounded-lg shadow-lg">
             <img
               src="https://static.zara.net/assets/public/59e1/94cd/0bb44ac9bc1c/ce1a6ddf68b2/02284576400-a4/02284576400-a4.jpg?ts=1741706964297&w=829"
               alt="Product 1"
-              class="w-full aspect-[2/3] object-contain bg-gray-100 transition-transform duration-300 group-hover:scale-105"
+              class="aspect-[2/3] w-full bg-gray-100 object-contain transition-transform duration-300 group-hover:scale-105"
             />
 
             <!-- Text Container -->
             <div
-              class="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-black bg-opacity-50 text-white px-6 py-3 rounded-lg shadow-md inline-flex items-center justify-center min-w-[300px] min-h-[50px] transition-all duration-300 ease-in-out group-hover:min-h-[120px] text-center"
+              class="absolute bottom-4 left-1/2 inline-flex min-h-[50px] min-w-[300px] -translate-x-1/2 transform items-center justify-center rounded-lg bg-black bg-opacity-50 px-6 py-3 text-center text-white shadow-md transition-all duration-300 ease-in-out group-hover:min-h-[120px]"
             >
               <h3
-                class="text-lg font-semibold transition-opacity duration-300 ease-in-out group-hover:opacity-0 whitespace-nowrap"
+                class="whitespace-nowrap text-lg font-semibold transition-opacity duration-300 ease-in-out group-hover:opacity-0"
               >
                 Z1975 MIDI DENIM DRESS
               </h3>
               <span
-                class="absolute opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100 px-4 w-full break-words"
+                class="absolute w-full break-words px-4 opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100"
               >
                 A stylish midi denim dress, perfect for casual and formal looks.
               </span>
@@ -205,7 +205,7 @@ Product Section: Displays a grid of product cards with images, titles, descripti
 
           <a
             href="#"
-            class="mt-4 bg-blue-600 text-white px-6 py-3 rounded-full font-semibold shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 transition duration-300"
+            class="mt-4 rounded-full bg-blue-600 px-6 py-3 font-semibold text-white shadow-md transition duration-300 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400"
           >
             Shop Now
           </a>
@@ -213,23 +213,23 @@ Product Section: Displays a grid of product cards with images, titles, descripti
 
         <!-- Product Card 2 -->
         <div class="flex flex-col items-center">
-          <div class="relative rounded-lg shadow-lg overflow-hidden group">
+          <div class="group relative overflow-hidden rounded-lg shadow-lg">
             <img
               src="https://static.zara.net/assets/public/4b6f/5508/71da4b639ef9/8f96ea6167c2/01063305420-a1/01063305420-a1.jpg?ts=1741626207877&w=1126"
               alt="Product 2"
-              class="w-full aspect-[2/3] object-contain bg-gray-100 transition-transform duration-300 group-hover:scale-105"
+              class="aspect-[2/3] w-full bg-gray-100 object-contain transition-transform duration-300 group-hover:scale-105"
             />
 
             <div
-              class="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-black bg-opacity-50 text-white px-6 py-3 rounded-lg shadow-md inline-flex items-center justify-center min-w-[300px] min-h-[50px] transition-all duration-300 ease-in-out group-hover:min-h-[120px] text-center"
+              class="absolute bottom-4 left-1/2 inline-flex min-h-[50px] min-w-[300px] -translate-x-1/2 transform items-center justify-center rounded-lg bg-black bg-opacity-50 px-6 py-3 text-center text-white shadow-md transition-all duration-300 ease-in-out group-hover:min-h-[120px]"
             >
               <h3
-                class="text-lg font-semibold transition-opacity duration-300 ease-in-out group-hover:opacity-0 whitespace-nowrap"
+                class="whitespace-nowrap text-lg font-semibold transition-opacity duration-300 ease-in-out group-hover:opacity-0"
               >
                 COTTON - LINEN SHIRT
               </h3>
               <span
-                class="absolute opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100 px-4 w-full break-words"
+                class="absolute w-full break-words px-4 opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100"
               >
                 A breathable cotton-linen blend shirt, ideal for warm weather.
               </span>
@@ -237,7 +237,7 @@ Product Section: Displays a grid of product cards with images, titles, descripti
           </div>
           <a
             href="#"
-            class="mt-4 bg-blue-600 text-white px-6 py-3 rounded-full font-semibold shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 transition duration-300"
+            class="mt-4 rounded-full bg-blue-600 px-6 py-3 font-semibold text-white shadow-md transition duration-300 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400"
           >
             Shop Now
           </a>
@@ -245,23 +245,23 @@ Product Section: Displays a grid of product cards with images, titles, descripti
 
         <!-- Product Card 3 -->
         <div class="flex flex-col items-center">
-          <div class="relative rounded-lg shadow-lg overflow-hidden group">
+          <div class="group relative overflow-hidden rounded-lg shadow-lg">
             <img
               src="https://static.zara.net/assets/public/f512/5939/ea534f7da279/ddec792fd675/02785039644-a1/02785039644-a1.jpg?ts=1741795923399&w=829"
               alt="Product 3"
-              class="w-full aspect-[2/3] object-contain bg-gray-100 transition-transform duration-300 group-hover:scale-105"
+              class="aspect-[2/3] w-full bg-gray-100 object-contain transition-transform duration-300 group-hover:scale-105"
             />
 
             <div
-              class="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-black bg-opacity-50 text-white px-6 py-3 rounded-lg shadow-md inline-flex items-center justify-center min-w-[300px] min-h-[50px] transition-all duration-300 ease-in-out group-hover:min-h-[120px] text-center"
+              class="absolute bottom-4 left-1/2 inline-flex min-h-[50px] min-w-[300px] -translate-x-1/2 transform items-center justify-center rounded-lg bg-black bg-opacity-50 px-6 py-3 text-center text-white shadow-md transition-all duration-300 ease-in-out group-hover:min-h-[120px]"
             >
               <h3
-                class="text-lg font-semibold transition-opacity duration-300 ease-in-out group-hover:opacity-0 whitespace-nowrap"
+                class="whitespace-nowrap text-lg font-semibold transition-opacity duration-300 ease-in-out group-hover:opacity-0"
               >
                 SHORT PRINT DRESS
               </h3>
               <span
-                class="absolute opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100 px-4 w-full break-words"
+                class="absolute w-full break-words px-4 opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100"
               >
                 A vibrant short dress with a beautiful floral print, perfect for
                 summer outings.
@@ -270,7 +270,7 @@ Product Section: Displays a grid of product cards with images, titles, descripti
           </div>
           <a
             href="#"
-            class="mt-4 bg-blue-600 text-white px-6 py-3 rounded-full font-semibold shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 transition duration-300"
+            class="mt-4 rounded-full bg-blue-600 px-6 py-3 font-semibold text-white shadow-md transition duration-300 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400"
           >
             Shop Now
           </a>
@@ -278,23 +278,23 @@ Product Section: Displays a grid of product cards with images, titles, descripti
 
         <!-- Product Card 4 -->
         <div class="flex flex-col items-center">
-          <div class="relative rounded-lg shadow-lg overflow-hidden group">
+          <div class="group relative overflow-hidden rounded-lg shadow-lg">
             <img
               src="https://static.zara.net/assets/public/948b/a5bb/d4be4e77b2ab/a138f28f4bcc/04260904083-p/04260904083-p.jpg?ts=1741622327282&w=1024"
               alt="Product 4"
-              class="w-full aspect-[2/3] object-contain bg-gray-100 transition-transform duration-300 group-hover:scale-105"
+              class="aspect-[2/3] w-full bg-gray-100 object-contain transition-transform duration-300 group-hover:scale-105"
             />
 
             <div
-              class="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-black bg-opacity-50 text-white px-6 py-3 rounded-lg shadow-md inline-flex items-center justify-center min-w-[300px] min-h-[50px] transition-all duration-300 ease-in-out group-hover:min-h-[120px] text-center"
+              class="absolute bottom-4 left-1/2 inline-flex min-h-[50px] min-w-[300px] -translate-x-1/2 transform items-center justify-center rounded-lg bg-black bg-opacity-50 px-6 py-3 text-center text-white shadow-md transition-all duration-300 ease-in-out group-hover:min-h-[120px]"
             >
               <h3
-                class="text-lg font-semibold transition-opacity duration-300 ease-in-out group-hover:opacity-0 whitespace-nowrap"
+                class="whitespace-nowrap text-lg font-semibold transition-opacity duration-300 ease-in-out group-hover:opacity-0"
               >
                 CHECK SUIT
               </h3>
               <span
-                class="absolute opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100 px-4 w-full break-words"
+                class="absolute w-full break-words px-4 opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100"
               >
                 A modern check suit for a stylish and professional look.
               </span>
@@ -302,7 +302,7 @@ Product Section: Displays a grid of product cards with images, titles, descripti
           </div>
           <a
             href="#"
-            class="mt-4 bg-blue-600 text-white px-6 py-3 rounded-full font-semibold shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 transition duration-300"
+            class="mt-4 rounded-full bg-blue-600 px-6 py-3 font-semibold text-white shadow-md transition duration-300 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400"
           >
             Shop Now
           </a>
@@ -311,7 +311,7 @@ Product Section: Displays a grid of product cards with images, titles, descripti
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-400 text-white py-8">
+    <footer class="bg-gray-400 py-8 text-white">
       <div class="container mx-auto px-6 text-center">
         <p>&copy; 2025 MyStore. All rights reserved.</p>
         <div class="mt-4">
